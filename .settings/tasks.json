@@ -9,7 +9,7 @@
 {
 	"version": "0.1.0",
 	"command": "make",
-	"showOutput": "silent",
+	"showOutput": "always",
 	"tasks": [
 		{
 			"taskName": "clean",
@@ -23,6 +23,12 @@
 			"taskName": "build",
 			"args": [ "build" ],
 			"isBuildCommand": true,
+			"problemMatcher": "$msCompile"
+		},		
+		{
+			"taskName": "test",
+			"args": [ "test" ],
+			"isTestCommand": true,
 			"problemMatcher": "$msCompile"
 		}
 	]
