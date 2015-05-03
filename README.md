@@ -16,4 +16,6 @@ Configured .settings/tasks.json so that:
 Configured .settings/launch.json so that:
 * target/App.exe can be debugged
 
-
+Things that I would like to add:
+* Watch changes to source code and start test running (like node-watch etc)
+* Generate a template (like yeoman)
