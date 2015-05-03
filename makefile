@@ -7,6 +7,7 @@ SRCFILES=$(shell find src/main -name '*.cs')
 TSTFILES=$(shell find src/test -name '*.cs')
 BUILDOUTPUT=target
 APP=$(BUILDOUTPUT)/App.exe
+DLLS=$(shell find packages -name '*.dll')
 
 clean:
 	rm -rf $(BUILDOUTPUT)
@@ -16,8 +17,13 @@ restore:
 	$(NUGET) restore -o packages
 	
 build: clean
-	$(DMCS) -out:$(APP) -debug  $(SRCFILES)
-	$(DMCS) -out:$(APP).dll -debug -target:library -reference:$(APP) $(TSTFILES)
+	$(DMCS) -out:$(APP) -debug \
+        $(foreach dll, $(DLLS), $(addprefix -reference:, $(dll))) \
+        $(SRCFILES)
+
+	$(DMCS) -out:$(APP).dll -debug -target:library -reference:$(APP) \
+        $(foreach dll, $(DLLS), $(addprefix -reference:, $(dll))) \
+        $(TSTFILES)
 
 test:
 	$(NUNIT) -result=$(BUILDOUTPUT)/TestResult.xml $(APP).dll
