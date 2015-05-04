@@ -25,7 +25,7 @@ build: clean
         $(foreach dll, $(DLLS), $(addprefix -reference:, $(dll))) \
         $(TSTFILES)
 		
-	find packages/NUnit.2.6.4/lib -name '*.dll' -exec cp {} $(BUILDOUTPUT) \;
+	find packages -name '*.dll' -not -path 'packages/NUnit.Runners.*' -exec cp {} $(BUILDOUTPUT) \;
 
 test:
 	$(NUNIT) -result=$(BUILDOUTPUT)/TestResult.xml $(APP).dll

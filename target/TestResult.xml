@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="/Users/timvw/src/vscode-mac/target/App.exe.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-05-04" time="08:11:07">
+<test-results name="/Users/timvw/src/vscode-mac/target/App.exe.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-05-04" time="08:21:24">
   <environment nunit-version="2.6.4.14350" clr-version="4.0.30319.17020" os-version="Unix 14.3.0.0" platform="Unix" cwd="/Users/timvw/src/vscode-mac" machine-name="localhost" user="timvw" user-domain="localhost" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
   <test-suite type="Assembly" name="/Users/timvw/src/vscode-mac/target/App.exe.dll" executed="True" result="Success" success="True" time="0.012" asserts="0">
     <results>
       <test-suite type="Namespace" name="Icteam" executed="True" result="Success" success="True" time="0.009" asserts="0">
         <results>
-          <test-suite type="Namespace" name="Test" executed="True" result="Success" success="True" time="0.009" asserts="0">
+          <test-suite type="Namespace" name="Test" executed="True" result="Success" success="True" time="0.008" asserts="0">
             <results>
               <test-suite type="TestFixture" name="SomeTest" executed="True" result="Success" success="True" time="0.008" asserts="0">
                 <results>
