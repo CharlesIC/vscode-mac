@@ -24,6 +24,8 @@ build: clean
 	$(DMCS) -out:$(APP).dll -debug -target:library -reference:$(APP) \
         $(foreach dll, $(DLLS), $(addprefix -reference:, $(dll))) \
         $(TSTFILES)
+		
+	find packages/NUnit.2.6.4/lib -name '*.dll' -exec cp {} $(BUILDOUTPUT) \;
 
 test:
 	$(NUNIT) -result=$(BUILDOUTPUT)/TestResult.xml $(APP).dll
